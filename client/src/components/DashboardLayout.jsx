@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useQuery } from '@tanstack/react-query';
 import api from '@/api/axios';
@@ -14,6 +14,19 @@ const DashboardLayout = () => {
     const [isSidebarFolded, setIsSidebarFolded] = useState(false);
     const { logout } = useAuthStore();
     const { theme, setTheme } = useTheme();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+
+        try {
+            await api.post("/user/logout");
+        } catch (error) {
+            console.error("Logout background cleanup failed:", error);
+        } finally {
+            logout();
+            navigate("/")
+        }
+    }
 
     // Fetch todos here just to calculate the sidebar streak/stats
     const { data: todos = [] } = useQuery({
@@ -105,7 +118,7 @@ const DashboardLayout = () => {
                             <User size={18} />
                             {!isSidebarFolded && <span className="text-sm font-medium">Profile Settings</span>}
                         </NavLink>
-                        <button onClick={logout} className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-destructive hover:bg-destructive/10 transition-all ${isSidebarFolded ? 'justify-center' : ''}`}>
+                        <button onClick={handleLogout} className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-destructive hover:bg-destructive/10 transition-all ${isSidebarFolded ? 'justify-center' : ''}`}>
                             <LogOut size={18} />
                             {!isSidebarFolded && <span className="text-sm font-medium">Logout</span>}
                         </button>
