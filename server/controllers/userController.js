@@ -85,8 +85,8 @@ const login = async (req, res) => {
             // setting accessToken for 15 mins
             res.cookie('accessToken', accessToken, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV !== 'development',
-                sameSite: 'strict',
+                secure: true,
+                sameSite: 'none',
                 path: '/',
                 maxAge: 15 * 60 * 1000 // 15 mins
             });
@@ -94,8 +94,8 @@ const login = async (req, res) => {
             // setting refreshToken for 30 days if remember / 7 days
             res.cookie('refreshToken', refreshToken, {
                 httpOnly: true,
-                secure: process.env.NODE_ENV !== 'development',
-                sameSite: 'strict',
+                secure: true,
+                sameSite: 'none',
                 path: '/api/v1/user/refresh',
                 maxAge: rememberMe ? 30 * 24 * 60 * 60 * 1000 : 7 * 24 * 60 * 60 * 1000
             });
@@ -140,8 +140,8 @@ const refresh = async (req, res) => {
 
         res.cookie('accessToken', accessToken, {
             httpOnly: true,
-            secure: process.env.NODE_ENV !== 'development',
-            sameSite: 'strict',
+            secure: true,
+            sameSite: 'none',
             path: '/',
             maxAge: 15 * 60 * 1000
         });
