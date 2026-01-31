@@ -5,10 +5,26 @@ import { User, Bell, Shield, Moon, LogOut, Save, Camera, Globe, Loader2, Sun } f
 import BentoCard from '@/components/BentoCard';
 import { Button } from '@/components/ui/button';
 import { useTheme } from "@/components/ThemeProvider";
+import { useAuthStore } from '@/store/useAuthStore';
+import { useNavigate } from 'react-router-dom';
 
 const Settings = () => {
     const queryClient = useQueryClient();
     const { theme, setTheme } = useTheme();
+    const { logout } = useAuthStore();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+
+        try {
+            await api.post("/user/logout");
+        } catch (error) {
+            console.error("Logout background cleanup failed:", error);
+        } finally {
+            logout();
+            navigate("/")
+        }
+    }
 
     // 1. Local State for Mongoose User Fields
     const [formData, setFormData] = useState({
@@ -157,7 +173,7 @@ const Settings = () => {
             </div>
 
             <div className="flex items-center justify-between pt-6 border-t border-border/50">
-                <button className="flex items-center gap-2 text-red-500 font-bold text-sm hover:bg-red-50 p-3 rounded-xl transition-all">
+                <button onClick={handleLogout} className="flex items-center gap-2 text-red-500 font-bold text-sm hover:bg-red-50 p-3 rounded-xl transition-all">
                     <LogOut size={18} /> Log Out
                 </button>
                 <div className="flex gap-3">
