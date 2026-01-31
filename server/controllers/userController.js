@@ -153,12 +153,36 @@ const refresh = async (req, res) => {
 }
 
 const logout = async (req, res) => {
+    try {
+
+        if (req.userId) {
+            await UserModel.findByIdAndUpdate(req.userId, { refreshToken: null });
+        }
+
+        res.clearCookie('accessToken', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none',
+            path: '/'
+        });
+
+        res.clearCookie('refreshToken', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none',
+            path: '/api/v1/user/refresh'
+        });
+
+        res.status(200).json({ message: "Logged out successfully" });
+    } catch (error) {
+        res.status(500).json({ message: "Logout failed" });
+    }
+
     await UserModel.findByIdAndUpdate(req.userId, { refreshToken: null });
 
     res.clearCookie('accessToken', { path: '/' });
     res.clearCookie('refreshToken', { path: '/api/v1/user/refresh' });
 
-    res.status(200).json({ message: "Logged out successfully" });
 };
 
 const getProfile = async (req, res) => {

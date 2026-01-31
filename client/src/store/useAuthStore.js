@@ -15,10 +15,14 @@ export const useAuthStore = create(
                 isChecking: false
             }),
 
-            logout: () => set({
-                user: null,
-                isAuthenticated: false,
-            }),
+            logout: () => {
+                set({
+                    user: null,
+                    isAuthenticated: false,
+                })
+
+                useAuthStore.persist.clearStorage();
+            },
 
             checkAuth: async () => {
                 set({ isChecking: true });
