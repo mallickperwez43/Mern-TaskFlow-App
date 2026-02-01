@@ -162,3 +162,11 @@ This project is licensed under the **MIT License.**
 **Mallick Perwez**
 * GitHub: https://github.com/mallickperwez43
 * Project: **[Mern-TaskFlow-App](https://mern-task-flow-app.vercel.app)**
+
+### 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/mallickperwez43/Mern-TaskFlow-App/issues).
+
+### ⭐ Show your support
+If you like this project, please give it a ⭐️!
+
+Made with ❤️ by [Mallick Perwez](https://github.com/mallickperwez43).
