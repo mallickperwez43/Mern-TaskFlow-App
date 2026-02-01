@@ -1,6 +1,6 @@
 # 🚀 TaskFlow | Full‑Stack Task Management 
 TaskFlow is a powerful and modern task management application built using the MERN stack.
-It includes secure authentication, a productivity dashboard, real‑time task tracking, and a beautiful dark‑mode interface optimized for developers and students.
+It includes secure authentication, a productivity dashboard(Kanban Style with Drag and Drop feature), real‑time task tracking, and a beautiful dark‑mode interface optimized for developers and students.
 
 ## 🔗 Live Links
 
