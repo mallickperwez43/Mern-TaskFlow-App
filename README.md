@@ -1,14 +1,14 @@
-🚀 TaskFlow | Full‑Stack Task Management
+# 🚀 TaskFlow | Full‑Stack Task Management 
 TaskFlow is a powerful and modern task management application built using the MERN stack.
 It includes secure authentication, a productivity dashboard, real‑time task tracking, and a beautiful dark‑mode interface optimized for developers and students.
 
-🔗 Live Links
+## 🔗 Live Links
 
 * 🌐 Live Demo: https://mern-task-flow-app.vercel.app
 * 🖥️ Backend API: Hosted on Render
 
 
-✨ Key Features
+## ✨ Key Features
 
 
 * 🔐 Enterprise‑Grade Authentication
@@ -58,74 +58,77 @@ It includes secure authentication, a productivity dashboard, real‑time task tr
 
 
 
-🛠️ Tech Stack
-Frontend
+## 🛠️ Tech Stack
 
-    * React (Vite)
-    * Zustand
-    * TanStack Query v5
-    * Tailwind CSS
-    * Shadcn/UI
-    * Lucide Icons
+###  Frontend
 
-Backend
+* React (Vite)
+* Zustand
+* TanStack Query v5
+* Tailwind CSS
+* Shadcn/UI
+* Lucide Icons
 
-    * Node.js
-    * Express.js
-    * MongoDB (Mongoose)
-    * JWT Authentication
-    * Bcrypt
-    * Zod
-    * Nodemailer
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* JWT Authentication
+* Bcrypt
+* Zod
+* Nodemailer
 
 
-🚀 Installation & Local Setup
-Follow the steps below to run TaskFlow locally.
+## 🚀 Installation & Local Setup
+### Follow the steps below to run TaskFlow locally.
 
-1. Clone the Repository
+### 1. Clone the Repository
     1. git clone https://github.com/mallickperwez43/Mern-TaskFlow-App.git
     2. cd Mern-TaskFlow-App
 
-⚙️ Backend Setup
-2. Install Backend Dependencies
+### ⚙️ Backend Setup
+### 2. Install Backend Dependencies
     1. cd server
     2. npm install
 
-3. Create Backend .env File
-    Create a .env file inside server:
-        PORT=5000
-        MONGODB_URI=your_mongodb_connection_string
+### 3. Create Backend .env File
+* Create a .env file inside server:
+    * PORT=5000
+    * MONGODB_URI=your_mongodb_connection_string
 
-        # JWT Secrets
-        JWT_SECRET=your_short_term_secret
-        REFRESH_SECRET=your_long_term_secret
+    **JWT Secrets**
+    * JWT_SECRET=your_short_term_secret
+    * REFRESH_SECRET=your_long_term_secret
 
-        CLIENT_URL=http://localhost:5173
-        NODE_ENV=development
+    **CLIENT_URL=http://localhost:5173** 
 
-        # Email (Password Reset)
-        EMAIL_USER=your_email@gmail.com
-        EMAIL_PASS=your_app_password
+    * NODE_ENV=development
 
-💻 Frontend Setup
-4. Install Frontend Dependencies
-    1. cd ../client
-    2. npm install
+    **Email (Password Reset)**
+    * EMAIL_USER=your_email@gmail.com
+    * EMAIL_PASS=your_app_password
 
-5. Create Frontend .env File
-    Inside client/.env:
-        VITE_API_URL=http://localhost:5000/api/v1
+### 💻 Frontend Setup
+### 4. Install Frontend Dependencies
+        1. cd ../client
+        2. npm install
 
-▶️ Running the App
-6. Start Backend
-    1. cd server
-    2. npm run dev
+### 5. Create Frontend .env File
+Inside client/.env:
+        
+        1. VITE_API_URL=http://localhost:5000/api/v1
 
-7. Start Frontend
-    1. cd client
-    2. npm run dev
+### ▶️ Running the App
+### 6. Start Backend
+        1. cd server
+        2. npm run dev
 
-🛡️ Architecture & Security Notes
+### 7. Start Frontend
+        1. cd client
+        2. npm run dev
+
+### 🛡️ Architecture & Security Notes
 
 * CORS configured for cross-domain credentials (Vercel → Render)
 * Secure Cookies
@@ -137,25 +140,25 @@ Follow the steps below to run TaskFlow locally.
 * SPA Routing Fix
     * vercel.json rewrite rules to prevent 404 on page refresh
 
-📁 Project Structure
-├── client
-│   ├── src/api          # Axios instance + interceptors
-│   ├── src/components   # UI components
-│   ├── src/layouts      # Auth & Dashboard layouts
-│   ├── src/store        # Zustand stores
-│   └── src/pages        # Feature pages
-└── server
-    ├── controllers      # Request handlers
-    ├── middleware       # Auth + error handlers
-    ├── models           # Mongoose schemas
-    ├── routes           # API routes
-    └── validators       # Zod validation schemas
+### 📁 Project Structure
+    ├── client
+    │   ├── src/api          # Axios instance + interceptors
+    │   ├── src/components   # UI components
+    │   ├── src/layouts      # Auth & Dashboard layouts
+    │   ├── src/store        # Zustand stores
+    │   └── src/pages        # Feature pages
+    └── server
+        ├── controllers      # Request handlers
+        ├── middleware       # Auth + error handlers
+        ├── models           # Mongoose schemas
+        ├── routes           # API routes
+        └── validators       # Zod validation schemas
 
 
-📜 License
+### 📜 License
 This project is licensed under the **MIT License.**
 
-👤 Author
+### 👤 Author
 **Mallick Perwez**
-GitHub: https://github.com/mallickperwez43
-Project: **Mern-TaskFlow-App**
+* GitHub: https://github.com/mallickperwez43
+* Project: **[Mern-TaskFlow-App](https://mern-task-flow-app.vercel.app)**
