@@ -11,7 +11,7 @@ const Landing = () => {
     return (
         <div className='flex flex-col items-center'>
             {/* Hero */}
-            <section className='relative pt-32 pb-16 px-6 text-center max-w-4xl'>
+            <section className='relative min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-6 text-center max-w-5xl w-full'>
                 <div className='absolute top-0 left-1/2 -translate-x-1/2 w-full h-96 bg-primary/10 blur-[120px] -z-10 rounded-full' />
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-border/50 text-xs font-medium mb-6 animate-in fade-in slide-in-from-bottom-3 duration-1000">
                     <Sparkles size={12} className="text-primary" />
